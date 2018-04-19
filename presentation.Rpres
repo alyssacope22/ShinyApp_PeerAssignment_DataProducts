@@ -1,0 +1,47 @@
+Shiny App & Reproducible Pitch - Predicitng Diamond Pricing
+========================================================
+author: Alyssa Copeland
+date: 04/19/2018
+autosize: true
+transition-speed: slow
+
+Overview
+========================================================
+This presentation contains documentation from the dataset 'diamonds' to predict the pricing application.  The application can be found [**here**](https://alyssacope22.shinyapps.io/Shiny_App_and_Reprocuible_Pitch/)
+
+This application builds a linear regression model using 'diamonds' dat set, and it is predicting the price of a diamond based off of these four variables:
+
+  1. Clarity
+  2. Color
+  3. Carat
+  
+
+It builds a plot based off of these variables and outputs a predicted price for the diamond.
+
+Data Set - Diamonds  
+========================================================
+The 'diamonds' data set is a part of the 'ggplot2' package.  This data contains the information about 53,940 diamonds with 10 variables.
+
+```{r,echo=F}
+library(ggplot2)
+summary(diamonds)
+```
+
+Shiny Files
+========================================================
+The application is created using the 'Shiny' package and the source code is in 2 files:
+
+  - 'ui.R'
+  - 'server.R'
+
+Both files can be found here: [GitHub repo](https://github.com/alyssacope22/ShinyApp_PeerAssignment_DataProducts)
+
+Application Functions
+========================================================
+This application is drawing a plot using 'plotly' of the 'diamonds' data set distributed by their size (carats) and price ($).  The regression line is shown on the plot as well.
+
+By selecting specific parameters of the diamond features (carat, color, and clarity) the user is able to select a sub set of the data that follows the parameters set, and the regression is recalculalted based only on the diamonds in the data set that share the same features.  From that, it outputs a predicted price.
+
+If no features are selected, the the plot will show all of the data and regression line.
+
+
